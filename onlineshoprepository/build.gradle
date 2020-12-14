@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.onlineshop'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	runtimeOnly 'org.postgresql:postgresql'
+
+	compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.11.2'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.3.2.RELEASE'
+	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.18.Final'
+
+	testImplementation('org.postgresql:postgresql')
+	testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
+	compile group: 'org.springframework', name: 'spring-tx', version: '5.2.8.RELEASE'
+	compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.3.4.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.3.3.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.3.3.RELEASE'
+	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+
+}
+
+test {
+	useJUnitPlatform()
+}
